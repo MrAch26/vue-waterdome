@@ -8,9 +8,11 @@
 
 <script>
 import navbar from "./components/Navbar.vue";
+import router from "./routes";
 export default {
   components: {
-    navbar
+    navbar,
+    router,
   }
 };
 </script>

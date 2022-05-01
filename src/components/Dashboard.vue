@@ -6,7 +6,8 @@
           <div class="card-header">Dashboard</div>
           <div class="card-body">
             <div v-if="user" class="alert alert-success" role="alert">You are logged in!</div>
-            <a class="nav-link" @click.prevent="signOutClick">Sign out</a>
+            <br>
+            <a class="btn" href="#" @click.prevent="signOutClick">Sign out</a>
           </div>
         </div>
       </div>
@@ -17,16 +18,7 @@
 import { mapGetters } from "vuex";
 import { getAuth, signOut } from "@firebase/auth";
 import { initializeApp } from "@firebase/app";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCX0zFG5goPlhpaQel--z7v8HZOzeIW1YY",
-  authDomain: "jewish-welmo.firebaseapp.com",
-  projectId: "jewish-welmo",
-  storageBucket: "jewish-welmo.appspot.com",
-  messagingSenderId: "832115845832",
-  appId: "1:832115845832:web:64637a7d35f88da01853fd",
-  measurementId: "G-W17LS0QP7J"
-};
+import { firebaseConfig } from "../secret";
 
 initializeApp(firebaseConfig);
 var auth = getAuth();
@@ -59,3 +51,14 @@ export default {
 };
 
 </script>
+
+<style>
+.btn {
+  padding: 10px;
+  background-color: #3ac0c0;
+  color: white;
+  text-decoration: none;
+}
+
+
+</style>

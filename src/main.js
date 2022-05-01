@@ -5,10 +5,11 @@ import App from './App.vue'
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 import { store } from './store'
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createWebHistory } from 'vue-router';
+
+import {firebaseConfig} from './secret.js' 
 
 const routes = [
-    
   {
     path: "/",
     name: "Home",
@@ -35,19 +36,6 @@ const router = createRouter({
   history: createWebHistory(),
   routes,
 });
-
-
-
-const firebaseConfig = {
-  apiKey: "AIzaSyCX0zFG5goPlhpaQel--z7v8HZOzeIW1YY",
-  authDomain: "jewish-welmo.firebaseapp.com",
-  projectId: "jewish-welmo",
-  storageBucket: "jewish-welmo.appspot.com",
-  messagingSenderId: "832115845832",
-  appId: "1:832115845832:web:64637a7d35f88da01853fd",
-  measurementId: "G-W17LS0QP7J"
-};
-
 
 initializeApp(firebaseConfig);
 var auth = getAuth();
